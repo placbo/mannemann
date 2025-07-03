@@ -89,8 +89,8 @@ h1 {
 }
 
 .image-placeholder {
-  max-width: 500px;
-  height: 80vh;
+  height: 600px;
+
   object-fit: cover;
   border: 3px solid #ffe482;
   border-radius: 8px;
@@ -178,6 +178,7 @@ h1 {
 
   .image-placeholder {
     width: 50vw;
+    height: 60vh;
   }
 
   .text-section {
