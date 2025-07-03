@@ -15,6 +15,11 @@ body {
   color: #ffe482;
   overflow-x: auto;
   height: 100vh;
+  background-image: url("images/background2_web.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -182,4 +187,46 @@ h1 {
     flex-direction: row;
     padding: 1rem;
   }
+}
+
+/* Alert Modal Styles */
+.alert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-modal-content {
+  font-family: "Arial", "Helvetica", sans-serif;
+
+  background: #181a1b;
+  color: #ffe482;
+  padding: 4rem 6rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.alert-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #ffe482;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.alert-modal-close:hover {
+  color: #fff;
 }

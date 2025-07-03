@@ -20,6 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
         inline: "start",
       });
       currentSectionIndex = index;
+      if (currentSectionIndex === 5) {
+        const scrollIndicator = document.querySelector(".scroll-indicator");
+        if (scrollIndicator) {
+          scrollIndicator.style.transition = "opacity 0.5s";
+          scrollIndicator.style.opacity = "0";
+          setTimeout(() => {
+            scrollIndicator.style.display = "none";
+            scrollIndicator.style.opacity = "1"; // reset for next time
+          }, 500);
+        }
+      } else {
+        const scrollIndicator = document.querySelector(".scroll-indicator");
+        if (scrollIndicator) {
+          scrollIndicator.style.display = "flex";
+        }
+      }
     }
   }
 
@@ -97,9 +113,21 @@ document.addEventListener("DOMContentLoaded", function () {
   window.scrollToPrevious = scrollToPrevious;
 });
 
+// Show the alert modal on page load
+//document.addEventListener("DOMContentLoaded", function () {});
+
 function handleScrollIndictorClick() {
-  const sections = document.querySelectorAll(".container .section");
-  if (sections.length > 1) {
-    sections[1].scrollIntoView({ behavior: "smooth" });
+  var modal = document.getElementById("alert-modal");
+  var closeBtn = document.getElementById("alert-modal-close");
+  if (modal) {
+    modal.style.display = "flex";
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    };
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
   }
 }
