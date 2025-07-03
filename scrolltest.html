@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minimalistic Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Impact", "Arial Black", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #181a1b;
+        color: #ffe482;
+      }
+
+      .container {
+        width: 70rem;
+        height: 40rem;
+        width: 100vw;
+
+        border: 1px solid #ffe482;
+        gap: 4rem;
+        margin: 4rem auto;
+        -padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -overscroll-behavior-x: contain;
+      }
+
+      .x {
+        font-size: clamp(6rem, 15vw, 12rem);
+        display: inline-block;
+        height: 30rem;
+        aspect-ratio: 1;
+        border-radius: 10%;
+        margin: 2rem 0;
+        background-color: #424445;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #ffe482;
+        border-radius: 8px;
+        scroll-snap-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container scroll-snap">
+      <div class="x">1</div>
+      <div class="x">2</div>
+      <div class="x">3</div>
+      <div class="x">4</div>
+      <div class="x">5</div>
+    </div>
+  </body>
+</html>

@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-y: hidden;
 }
 
@@ -20,8 +21,10 @@ body {
   display: flex;
   align-items: center;
   height: 100vh;
-  width: max-content;
+  width: 100vw;
   padding: 0 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
@@ -33,6 +36,7 @@ body {
   flex-shrink: 0;
   gap: 2rem;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .text-section {
@@ -159,7 +163,8 @@ h1 {
   .scroll-indicator {
     display: none;
   }
-  body, .container {
+  body,
+  .container {
     height: auto;
     min-height: 100vh;
   }
@@ -169,5 +174,6 @@ h1 {
   /* Optionally reduce padding to avoid overflow */
   .section {
     padding: 0 1rem;
+    flex-direction: row;
   }
 }
