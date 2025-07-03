@@ -121,6 +121,47 @@ h1 {
   background: #fff;
 }
 
+/* Audio control button */
+.audio-control {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.audio-control:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.audio-control.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.audio-icon {
+  font-size: 3rem;
+  color: #ffe482;
+  font-weight: 900;
+  text-shadow: 2px 2px 0px #333;
+  margin-bottom: 0.5rem;
+}
+
+.audio-text {
+  font-size: 1rem;
+  color: #ffe482;
+  font-weight: 700;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.2em;
+}
+
 /* Scroll indicator */
 .scroll-indicator {
   position: fixed;
@@ -168,6 +209,17 @@ h1 {
 @media (max-width: 900px) {
   .scroll-indicator {
     display: none;
+  }
+
+  .audio-control {
+    left: 1rem;
+    top: 2rem;
+    transform: none;
+  }
+
+  .audio-text {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
   }
 
   body,

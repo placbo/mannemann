@@ -131,3 +131,46 @@ function handleScrollIndictorClick() {
     };
   }
 }
+
+function handleAudioPlay() {
+  const audio = document.getElementById("bakgrunnslyd");
+  const audioControl = document.getElementById("audio-control");
+
+  if (audio && audioControl) {
+    if (audio.paused) {
+      audio
+        .play()
+        .then(() => {
+          // Hide the button after successful play
+          audioControl.classList.add("hidden");
+        })
+        .catch((error) => {
+          console.log("Audio play failed:", error);
+        });
+    }
+  }
+}
+
+// Check if audio autoplay was blocked and show button if needed
+document.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("bakgrunnslyd");
+  const audioControl = document.getElementById("audio-control");
+
+  if (audio && audioControl) {
+    // Initially hide the button
+    audioControl.style.display = "none";
+
+    // Check if autoplay worked
+    setTimeout(() => {
+      if (audio.paused) {
+        // Autoplay was blocked, show the button
+        audioControl.style.display = "flex";
+      }
+    }, 1000);
+
+    // Also listen for when audio starts playing to hide button
+    audio.addEventListener("play", () => {
+      audioControl.classList.add("hidden");
+    });
+  }
+});
