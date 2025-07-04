@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
   let currentSectionIndex = 0;
   let isScrolling = false;
-  const scrollCooldown = 1000; //ms
+  const scrollCooldown = 1500; //ms
 
   function scrollToSection(index) {
     if (index >= 0 && index < sections.length) {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inline: "start",
       });
       currentSectionIndex = index;
-      if (currentSectionIndex === 5) {
+      if (currentSectionIndex === sections.length - 1) {
         const scrollIndicator = document.querySelector(".scroll-indicator");
         if (scrollIndicator) {
           scrollIndicator.style.transition = "opacity 0.5s";
